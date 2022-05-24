@@ -3,7 +3,7 @@ const github = require(`@actions/github`);
 const azdev = require('azure-devops-node-api');
 const showdown = require('showdown');
 
-const debug = true; // debug mode for testing...always set to false before doing a commit
+const debug = false; // debug mode for testing...always set to false before doing a commit
 const testPayload = []; // used for debugging, cut and paste payload
 
 main();
@@ -97,9 +97,9 @@ async function main() {
       case "opened":
         workItem === null ? await create(vm) : "";
         break;
-      /* case "edited":
+      case "edited":
         workItem != null ? await update(vm, workItem) : "";
-        break; */
+        break;
       case "created": // adding a comment to an issue
         workItem != null ? await comment(vm, workItem) : "";
         break;
