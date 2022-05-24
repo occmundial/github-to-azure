@@ -97,9 +97,9 @@ async function main() {
       case "opened":
         workItem === null ? await create(vm) : "";
         break;
-/*       case "edited":
+      case "edited":
         workItem != null ? await update(vm, workItem) : "";
-        break; */
+        break;
       case "created": // adding a comment to an issue
         workItem != null ? await comment(vm, workItem) : "";
         break;
